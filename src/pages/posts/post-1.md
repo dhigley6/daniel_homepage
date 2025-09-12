@@ -17,7 +17,7 @@ First, let's talk about the surprising case of how fixing a bug in the data prep
 
 When making a software product without machine learning, there is often significant data manipulation involved to prepare data for a model to predict on. As with any software, there could be bugs in the data preperation logic when first shipped. When such a bug is disovered in systems without a machine learning component, fixing it by itself is a natural, valuable thing to do. When the data manipulation is used in preparing data to be input to a machine learning model, however, this natural response to quickly correct the data manipulation to be as intended is often not the best idea unless one also takes into account how it impacts the model. In fact, fixing the data manipulation logic without updating the machine learning model is likely to leave us in a worse state than taking no action. To understand why, let's first take a brief digression on the related phenomenon of the impact of different visual data preparations on human ability to carry out routine tasks.
 
-### Seeing Everything Upside Down
+### Seeing Upside Down
 
 In the middle of the 20th century, Theodor Erismann and Ivo Kohler conducted experiments where a subject person was given specially-designed goggles which flipped their vision with top becoming bottom and bottom top. 
 
@@ -33,18 +33,19 @@ Next, let's talk about considerations for when we change the range of data a mod
 
 ### Expanding the Range of Data a Model Predicts on
 
+When developing a normal software product, we typically try to get it to behave in desirable ways over the full range of its inputs. We think deeply about edge and corner cases that are rarely encountered and ensure that the program logic handles them correctly. We even think about what unintended on invalid inputs our program could receive and how it could fail gracefully in their presence. Given this deep design into how a program should behave over its full range of possible inputs, it is often safe to extend the range of data it runs on without surprising consequences.
 
+Machine learning models have become common pieces of software products due to their abilities to solve tasks that rules-based software struggles with. With these new abilities, though, does come some downsides that are not present with rules-based software. Machine learning models, in contrast to normal software, are not designed to or even expected to operate sensibly over their full range of possible inputs. In contrast, there is typically a range of input data over which a model is believed to perform acceptably. This is due to the finiteness of the range of data over which they have been trained and evaluated on to perform satisfactorily. Just as extensive physics education brings no guarantee that a person will do well on a biology exam, extensively training a model over a particular range of data brings no guarantee that it will perform well on new, previously unseen ranges of data.
+
+This has important implications for when the range of data that a model is predicting on needs to be expanded. This may occur when new demographics are exposed to the system, for example. It also can occur naturally over time as data drift when circumstances change over time. In any case, it is important that as the range of data fed into a model is expanded, we also ensure that the model continues to perform acceptably on the new range of data, and update the model if it is needed.
 
 ### Reducing the Range of Data a Model Predicts on
 
-### Conclusions
+In contrast to the case of 
 
-If you are used to working on software systems without machine learning components, you may be used to 
+## Conclusions
 
-
-
-
-be used to fixing bugs where data is not processed as intended as soon as discovered and without other changes to the system. When the data processing is used to prepare data for a machine learning model, however, it is critical to also update the machine learning model when fixing such bugs. Not doing so could result in decreased model performance.
+If you are used to working on software systems without machine learning components, you are likely used to operating in certain time-tested manners. These practices mostly still work well when machine learning components are added to the software system, but there are some cases that warrant re-examination and changes in common practices when there is a machine learning component in your software system. One example discussed above was the importance of considering the impact on the model when fixing bugs in data preparation logic for machine learning models. The second example was the importance of updating model evaluation and monitoring when the range of data that a model predicts on is reduced or expanded.
 
 
 
