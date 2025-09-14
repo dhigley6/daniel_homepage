@@ -6,6 +6,27 @@ html {
 body {
     margin: 0 auto;
     width: 100%;
+    /* max-width: 95ch; */
+    padding: 1rem;
+    line-height: 1.5;
+}
+
+header {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 95ch;
+    padding: 1rem;
+    line-height: 1.5;
+    position: relative;
+    height: 55px;
+    /* margin-top: 0; */
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+footer {
+    margin: 0 auto;
+    width: 100%;
     max-width: 95ch;
     padding: 1rem;
     line-height: 1.5;
@@ -51,11 +72,12 @@ h1 {
     font-size: 1.2rem;
     font-weight: bold;
     text-transform: uppercase;
+    color: black;
 }
 
 .nav-links a:hover,
 .nav-links a:focus {
-    background-color: #ff9776;
+    text-decoration: underline;
 }
 
 .expanded {
@@ -87,5 +109,40 @@ html.dark {
 }
 
 .dark .nav-links a {
+    color: #fff;
+}
+
+.content {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 95ch;
+    padding: 1rem;
+    line-height: 1.5; 
+}
+
+hr { 
+    margin-left: -20px; 
+    margin-right: -20px 
+}
+
+nav {
+    float: right;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.name-link a {
+    float: left;
+    font-size: 2rem;
+    text-decoration: none;
+    color: black;
+}
+
+.name-link a:hover,
+.name-link a:focus {
+    text-decoration: underline;
+}
+
+.dark .name-link a {
     color: #fff;
 }
