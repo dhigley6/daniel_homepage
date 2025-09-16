@@ -149,3 +149,16 @@ nav {
 .dark .name-link a {
     color: #fff;
 }
+
+.icon-path {
+    fill: currentColor;
+}
+
+.icon {
+    height: 40px;
+}
+
+.icon-link {
+    color: currentColor;
+    text-decoration: none;
+}
