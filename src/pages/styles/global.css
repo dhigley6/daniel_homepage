@@ -19,7 +19,6 @@ header {
     line-height: 1.5;
     position: relative;
     height: 55px;
-    /* margin-top: 0; */
     padding-top: 0;
     padding-bottom: 0;
 }
@@ -29,12 +28,12 @@ header {
 }
 
 footer {
-    margin: 1rem auto;
+    margin: 0.75rem auto;
     width: 100%;
     max-width: 95ch;
     line-height: 1.5;
     position: relative;
-    padding: 0 1rem;
+    padding: 0;
 }
 
 .footer-container {
@@ -61,14 +60,13 @@ h1 {
     width: 40px;
     height: 5px;
     margin-bottom: 10px;
-    background-color: #ff9776;
+    background-color: currentColor;
 }
 
 .nav-links {
     width: 100%;
     top: 5rem;
     left: 48px;
-    background-color: #ff9776;
     display: none;
     margin: 0;
 }
@@ -150,12 +148,12 @@ nav {
     color: #fff;
 }
 
-.icon-path {
-    fill: currentColor;
-}
-
 .icon {
     height: 40px;
+}
+
+.icon path {
+    fill: currentColor
 }
 
 .icon-link {
