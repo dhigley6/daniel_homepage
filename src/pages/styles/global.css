@@ -7,7 +7,7 @@ body {
     margin: 0 auto;
     width: 100%;
     /* max-width: 95ch; */
-    padding: 1rem;
+    padding: 0.25rem 0;
     line-height: 1.5;
 }
 
@@ -24,12 +24,21 @@ header {
     padding-bottom: 0;
 }
 
+.header-container {
+    border-bottom: 1.25px solid gray;
+}
+
 footer {
-    margin: 0 auto;
+    margin: 1rem auto;
     width: 100%;
     max-width: 95ch;
-    padding: 1rem;
     line-height: 1.5;
+    position: relative;
+    padding: 0 1rem;
+}
+
+.footer-container {
+    border-top: 1.25px solid gray;
 }
 
 * {
@@ -117,11 +126,6 @@ html.dark {
     max-width: 95ch;
     padding: 1rem;
     line-height: 1.5; 
-}
-
-hr { 
-    margin-left: -20px; 
-    margin-right: -20px 
 }
 
 nav {
